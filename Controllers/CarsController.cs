@@ -44,20 +44,47 @@ namespace GregsList.Controllers
 
         }
 
-  [HttpPost]
-  public ActionResult<Car> CreateCar([FromBody] Car carData)
-{
-  try
-  {
-    Car newCar = _cs.CreateCar(carData);
-    return Ok(newCar);
-  }
-  catch (Exception e)
-  {
-    return BadRequest(e.Message);
-  }
-}
+        [HttpPost]
+        public ActionResult<Car> CreateCar([FromBody] Car carData)
+        {
+            try
+            {
+                Car newCar = _cs.CreateCar(carData);
+                return Ok(newCar);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
 
+        [HttpDelete("{id}")]
+        public ActionResult<String> Delete(string id)
+        {
+            try
+            {
+                _cs.Delete(id);
+                return Ok("Thats some dangerous racing, deleted");
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
 
+      [HttpPut("{id}")]
+      public ActionResult<Car> EditCar(string id, [FromBody] Car carData)
+      {
+        try
+        {
+          carData.Id = id;
+          Car updated = _cs.EditCar(carData);
+          return Ok(updated);
+        }
+        catch (Exception e)
+        {
+          return BadRequest(e.Message);
+        }
+      }
     }
 }
