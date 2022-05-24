@@ -43,7 +43,6 @@ namespace GregsList.Services
             original.Year = carData.Year != 0 ? carData.Year : original.Year;
             original.ImgUrl = carData.ImgUrl ?? original.ImgUrl;
 
-
             return original;
         }
     }
