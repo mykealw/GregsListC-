@@ -21,5 +21,29 @@ namespace GregsList.Services
             }
             return job;
         }
+
+        internal Job PostJob(Job jobData)
+        {
+            Database.Jobs.Add(jobData);
+            return jobData;
+        }
+
+        internal void DeleteJob(string id)
+        {
+            Job found = GetJobById(id);
+            Database.Jobs.Remove(found);
+        }
+
+        internal Job EditJob(Job jobData)
+        {
+            Job original = GetJobById(jobData.Id);
+            original.Description = jobData.Description ?? original.Description;
+            original.Type = jobData.Type ?? original.Type;
+            original.Salary = jobData.Salary != 0 ? jobData.Salary : original.Salary;
+            original.Title = jobData.Title ?? original.Title;
+            original.ImgUrl = jobData.ImgUrl ?? original.ImgUrl;
+
+            return original;
+        }
     }
 }

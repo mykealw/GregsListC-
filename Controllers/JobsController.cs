@@ -45,11 +45,48 @@ namespace GregsList.Controllers
             }
         }
 
+        [HttpPost]
+        public ActionResult<Job> PostJob([FromBody] Job jobData)
+        {
+            try
+            {
+                Job newJob = _js.PostJob(jobData);
+                return Ok(jobData);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
 
+        [HttpDelete("{id}")]
+        public ActionResult<String> DeleteJob(string id)
+        {
+            try
+            {
+                _js.DeleteJob(id);
+                return Ok("I hope they work out for you, deleted");
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
 
-
-
-
+        [HttpPut("{id}")]
+        public ActionResult<Job> EditJob(string id, [FromBody] Job jobData)
+        {
+            try
+            {
+                jobData.Id = id;
+                Job updated = _js.EditJob(jobData);
+                return Ok(updated);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
 
 
 
