@@ -15,12 +15,15 @@ namespace GregsList.Services
             Car car = Database.Cars.Find(c => c.Id == id);
             if (car == null)
             {
-                throw new Exception("This car is not on the grid, bad Id")
+                throw new Exception("This car is not on the grid, bad Id");
             }
             return car;
         }
 
-
-
+        internal Car CreateCar(Car carData)
+        {
+            Database.Cars.Add(carData);
+            return carData;
+        }
     }
 }

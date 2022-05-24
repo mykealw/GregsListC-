@@ -44,6 +44,20 @@ namespace GregsList.Controllers
 
         }
 
+  [HttpPost]
+  public ActionResult<Car> CreateCar([FromBody] Car carData)
+{
+  try
+  {
+    Car newCar = _cs.CreateCar(carData);
+    return Ok(newCar);
+  }
+  catch (Exception e)
+  {
+    return BadRequest(e.Message);
+  }
+}
+
 
     }
 }
