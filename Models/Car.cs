@@ -37,7 +37,7 @@ namespace GregsList.Models
         public int Price { get; set; }
         [Required]
         [MinLength(3)]
-        [MaxLength(30)]
+        [MaxLength(60)]
         public string ImgUrl { get; set; }
     }
 }

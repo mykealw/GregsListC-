@@ -13,5 +13,12 @@ namespace GregsList.FakeDB
             new Car("W13", "Mercedes", 2022, "Teal", 3333000, "http://thiscatdoesnotexist.com")
 
         };
+
+        public static List<House> Houses { get; set; } = new List<House>()
+        {
+            new House("Ugly thing", 3, 2, 200000, "http://thiscatdoesnotexist.com"),
+            new House("cute thing", 4, 3, 400000, "http://thiscatdoesnotexist.com"),
+            new House("Very nice thing", 5, 3, 800000, "http://thiscatdoesnotexist.com")
+        };
     }
 }

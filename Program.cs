@@ -9,6 +9,7 @@ builder.Services.AddControllers();
 // Put services below me
 
 builder.Services.AddTransient<CarsService>();
+builder.Services.AddTransient<HousesService>();
 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
