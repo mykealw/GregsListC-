@@ -38,6 +38,7 @@ namespace GregsList.Services
             original.Make = carData.Make ?? original.Make;
             original.Model = carData.Model ?? original.Model;
             original.Price = carData.Price != 0 ? carData.Price : original.Price;
+            // original.Price = carData.Price != original.Price ? carData.Price : original.Price;
             original.Color = carData.Color ?? original.Color;
             original.Year = carData.Year != 0 ? carData.Year : original.Year;
             original.ImgUrl = carData.ImgUrl ?? original.ImgUrl;

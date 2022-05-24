@@ -5,7 +5,7 @@ namespace GregsList.Models
     public class Car
     {
 
-        public Car( string model, string make, int year, string color, int price, string imgUrl)
+        public Car(string model, string make, int year, string color, int price, string imgUrl)
         {
             Id = Guid.NewGuid().ToString();
             Model = model;
@@ -33,7 +33,7 @@ namespace GregsList.Models
         [MaxLength(30)]
         public string Color { get; set; }
         [Required]
-        [Range(0, int.MaxValue)]
+        [Range(1, int.MaxValue)]
         public int Price { get; set; }
         [Required]
         [MinLength(3)]
