@@ -19,14 +19,31 @@ namespace GregsList.Controllers
         public ActionResult<List<Car>> GetAll()
         {
             try
-      {
-        List<Car> cars = _cs.GetAll();
-        return Ok(cars);
-      }
-      catch (Exception e)
-      {
-        return BadRequest(e.Message);
-      }
+            {
+                List<Car> cars = _cs.GetAll();
+                return Ok(cars);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
         }
+
+        [HttpGet("{id}")]
+        public ActionResult<Car> GetById(string id)
+        {
+            try
+            {
+                Car car = _cs.GetById(id);
+                return Ok(car);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+
+        }
+
+
     }
 }

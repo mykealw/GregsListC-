@@ -7,6 +7,20 @@ namespace GregsList.Services
     {
         internal List<Car> GetAll()
         {
-return Database.Cars  ;      }
+            return Database.Cars;
+        }
+
+        internal Car GetById(string id)
+        {
+            Car car = Database.Cars.Find(c => c.Id == id);
+            if (car == null)
+            {
+                throw new Exception("This car is not on the grid, bad Id")
+            }
+            return car;
+        }
+
+
+
     }
 }
