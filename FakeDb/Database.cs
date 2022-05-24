@@ -20,5 +20,12 @@ namespace GregsList.FakeDB
             new House("cute thing", 4, 3, 400000, "http://thiscatdoesnotexist.com"),
             new House("Very nice thing", 5, 3, 800000, "http://thiscatdoesnotexist.com")
         };
+
+        public static List<Job> Jobs { get; set; } = new List<Job>()
+        {
+            new Job("Wal-mart Greeter, say Hello, I love you", "Full-Time", 34000, "Greeter", "http://thiscatdoesnotexist.com"),
+            new Job("Wal-mart Greeter, say Hello, I love you", "Full-Time", 34000, "Greeter", "http://thiscatdoesnotexist.com"),
+            new Job("Wal-mart Greeter, say Hello, I love you", "Full-Time", 34000, "Greeter", "http://thiscatdoesnotexist.com")
+        };
     }
 }
