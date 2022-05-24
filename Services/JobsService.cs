@@ -11,5 +11,15 @@ namespace GregsList.Services
         {
             return Database.Jobs;
         }
+
+        internal Job GetJobById(string id)
+        {
+            Job job = Database.Jobs.Find(j => j.Id == id);
+            if (job == null)
+            {
+                throw new Exception("Don't worry employment is high, bad Id");
+            }
+            return job;
+        }
     }
 }

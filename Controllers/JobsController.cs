@@ -31,7 +31,19 @@ namespace GregsList.Controllers
             }
         }
 
-
+        [HttpGet("{id}")]
+        public ActionResult<Job> GetJobById(string id)
+        {
+            try
+            {
+                Job job = _js.GetJobById(id);
+                return Ok(job);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
 
 
 
