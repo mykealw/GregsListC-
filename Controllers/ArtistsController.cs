@@ -8,10 +8,10 @@ namespace GregsList.Controllers
     [Route("api/[controller]")]
     public class ArtistsController : ControllerBase
     {
-        private readonly ArtistsService _as;
-        public ArtistsController(ArtistsService as)
+        private readonly ArtistsService _arts;
+        public ArtistsController(ArtistsService arts)
         {
-            _as = as;
+            _arts = arts;
         }
     }
 }
